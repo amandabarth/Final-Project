@@ -206,24 +206,12 @@ input[type=submit] {
     font-size: large;
 }
 
-.textbox label{
-    display: block;
-}
-
 input{
     width: 10%;
 }
 
-.textbox label{
-    display: block;
-}
-
-.textbox input{
-    width: 25%;
-}
-
-.checkbox input, .radio input {
-    width: 3%;
+#appointTime{
+    width: 10em;
 }
 footer{
     background-color:var(--yellow);
