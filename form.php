@@ -1,12 +1,11 @@
 <?php include 'top.php';
 $dataIsGood = true;
 $message = '';
-$mailMessage = '';
-$mailSent = '';
 $email = '';
 $name = '';
 $appointTime = '';
 $type = 'Individual';
+$intentions = '';
 
 function sanatize($field){
     if(!isset($_POST[$field])){
@@ -33,7 +32,7 @@ function sanatize($field){
 
     $name = sanatize("txtName");
 
-    $appointTime = sanatize('type');
+    $appointTime = sanatize("type");
 
     $type = sanatize("newInfo");
     if($type != "Individual" AND $type != "Couple" AND $type != "Group"){
@@ -41,40 +40,37 @@ function sanatize($field){
         $dataIsGood = false;
     }
 
+    $intentions = sanatize("txtIntentions");
+
     if($dataIsGood){
         $sql = 'INSERT INTO tblSchedule(fldEmail, fldName, fldAppointTime, fldType) VALUES(?,?,?,?,?,?)';
         $statement = $pdo->prepare($sql);
         $data = array($email, $name, $appointTime, $type);
 
         if($statement->execute($data)){
-            print '<p>Your reading was sucessfully scheduled!</p>';
+            $message = '<h2>Thank you</h2>';
+            $message .= '<p>Your reading was sucessfully scheduled!</p>';
 
             $to = $email;
-            $from = 'CS 008 Team <rlkoenig@uvm.edu>';
+            $from = 'Linsey <Linsey.reads.tarot@gmail.com>';
             $subject = 'You Scheduled a Tarot Reading';
-
             $mailMessage = '<p style="font:">Thank you' . $name . 'for scheduling a reading! Your appointment is at '. $appointTime. '</p>';
             $mailMessage .= '<p>See you then!</p>';
             $mailMessage .= '<p>Linsey Reads Tarot</p>';
-
             $headers = "MIME_Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=stf-8\r\n";
             $headers .= "From: ".$from. "\r\n";
-
             $mailSent = mail($to, $subject, $mailMessage, $headers);
-
-            if ($mailSent){
-                print "<p>A copy has been emailed to your records.</p>";
-                print $mailMessage; 
+            if (!($mailSent)){
+                $message .= '<p>The email was not sent.</p>';
             }
 
-        } else {
-            print '<p>Your reading was NOT scheduled.<p>';
         }
-     
-    }
+        else {
+            $message = '<p class="wrong">Your reading was NOT scheduled.<p>';
+        }
+    } 
 }
-    
 ?>
                 <form action="#" method="POST">
                     <fieldset>
@@ -108,6 +104,13 @@ function sanatize($field){
                         </p>
                     </fieldset>
                     <fieldset>
+                        <legend>What are your intentions for this reading?</legend>
+                        <p class="form">
+                            <label for="txtIntentions">Intentions: </label>
+                            <textarea id="txtIntentions" name="txtIntentions" rows="5" cols="30"><?php print $intentions; ?></textarea>
+                        </p>
+                    </fieldset>
+                    <fieldset>
                         <p class="form">
                             <input type="submit" value="Send">
                         </p>
@@ -122,13 +125,6 @@ function sanatize($field){
                     print_r($_POST);
                     print '</pre>';
                 ?>
-            </section>
-            <section class="flexC">
-                <h2>Thank you for Scheduling an appointment!</h2>
-                <figure class="image">
-                    <img src="images/thank_you_small.jpg" srcset="images/thank_you_medium.jpg 2x, images/thank_you.jpg 3x" alt="Thank You">
-                    <figcaption><cite>https://emilypost.com/advice/different-ways-to-say-thank-you</cite></figcaption>
-                </figure>
             </section>
         </main>
         <?php
