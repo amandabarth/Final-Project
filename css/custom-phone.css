@@ -1,0 +1,26 @@
+.flexA, .flexB, .flexC {
+    flex: 0 1 100%;
+}
+.flexA {
+    width: 90%;
+}
+nav a {
+    display: block;
+    padding: .5em;
+    width: 90%;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.25em;
+}
+.form{
+   font-size: 1em;
+   display: block;
+}
+.image {
+    max-width: 90%;
+}
+
+

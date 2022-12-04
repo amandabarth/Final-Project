@@ -1,1 +1,232 @@
+:root{
+    --main-color:rgb(141, 143, 255);
+    --main-color-bg:rgba(126, 143, 255, 0.499);
+    --main-txt-color:rgb(67, 42, 255);
+    --alt-bg-color:rgba(123, 144, 199, 0.3);
+    --alt-txt-color:rgb(0, 0, 0);
+    --yellow: rgba(255, 230, 0, 0.765);
+}
+
+*{
+    font-family: Georgia, "Times New Roman", serif;
+}
+body{
+    max-width: 90%;
+    margin: 0 auto;
+    background-image: url(../images/bg-image.jpg);
+    color: var(--alt-txt-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    max-width:100%;
+    background-color: var(--main-color-bg);
+}
+header{
+    background-color: var(--yellow);
+    padding: 1%;
+    flex: 0 1 100%;
+}
+main h1{
+    flex: 0 1 100%;
+    margin: 1% 0 0 0;
+    padding: 1%;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+.flexA{
+    flex: 1 0 80%;
+    padding: 1%;
+}
+.flexB, .flexC {
+    flex: 1 0 40%;
+    padding: 1%;
+}
+
+.grid-layout{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+.sec-1{
+    justify-content: space-around;
+}
+
+.sec-2{
+    justify-content: center;
+}
+
+.sec-2-1{
+    grid-column: 1/3;
+}
+.sec-3{
+    justify-content: space-around;
+}
+
+img{
+    max-width: 100%;
+    border: medium solid var(--main-txt-color);
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.image{
+    width: 75%;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--main-txt-color);
+}
+
+p{
+    text-indent: 3.5%;
+    margin: 2%;
+    font-family: Georgia, 'Times New Roman', serif;
+    
+}
+
+cite{
+    font-size: xx-small;
+}
+
+figure{
+    max-width: 100%;
+}
+
+figcaption{
+    color: var(--alt-txt-color);
+    font-size: 75%;
+    margin: auto;
+    text-align: center;
+}
+
+nav {
+    border: thin;
+    background-color:var(--yellow);
+    padding: 1em 5em;
+    margin: auto;
+    text-align: center;
+    flex: 0 1 100%;
+    justify-content: space-evenly;
+
+}
+nav a{
+    display:inline-block;
+    width: 20%;
+}
+nav a:link{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.25em;
+    background-color:var(--alt-bg-color);
+    color:var(--alt-txt-color);
+    text-decoration:none;
+    border-radius: .1em;
+    padding: .2em;
+}
+nav a:visited{
+    color: black;
+}
+nav a:hover{
+    color:var(--main-color);
+    text-decoration: underline overline;
+}
+.schedule{
+    background-color: var(--main-txt-color);
+}
+.activePage{
+    font-weight: bold;
+}
+
+table{
+    border: medium solid var(--alt-txt-color);
+    border-collapse: collapse;
+    margin: auto;
+
+}
+
+table+p {
+    padding:1em;
+}
+
+td , th{
+    border: thin solid var(--alt-txt-color);
+    padding: .5em;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(255, 185, 99);
+}
+
+tr:nth-child(even) {
+    background-color:rgb(255, 123, 123);
+}
+
+caption{
+    font-variant: small-caps;
+    font-weight: bold;
+    padding-top: 1em
+
+}
+
+th{
+    font-weight:bold;
+    font-variant: small-caps;
+}
+
+form{
+    border: thin solid silver;
+    clear: both;
+    max-width: 70em;
+    margin:auto;
+    padding: 1%;
+}
+
+form p {
+    text-indent: 0;
+}
+
+fieldset {
+    padding: 1%
+}
+
+legend{
+    margin-top: 1%;
+}
+
+input[type=submit] {
+    background: var(--main-txt-color);
+    font-size: large;
+}
+
+.textbox label{
+    display: block;
+}
+
+input{
+    width: 10%;
+}
+
+.textbox label{
+    display: block;
+}
+
+.textbox input{
+    width: 25%;
+}
+
+.checkbox input, .radio input {
+    width: 3%;
+}
+footer{
+    background-color:var(--yellow);
+    flex: 0 0 100%;
+}
 

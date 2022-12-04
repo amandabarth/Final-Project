@@ -1,0 +1,21 @@
+.flexA, .flexB, .flexC {
+    flex: 0 1 100%;
+}
+nav a {
+    display: block;
+    padding: .5em;
+    width: 90%;
+}
+input[type=text]{
+    width: 50%;
+}
+textarea {
+    width: 55%;
+}
+input[type=submit]{
+    padding: 1em;
+    width: 50%;
+}
+label{
+    font-size: 1em;
+}
