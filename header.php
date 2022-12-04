@@ -1,3 +1,3 @@
 <header>
-    <h1>Climate Change - Effects on Society</h1>
+    <h1>Lindsey Reads Tarot</h1>
 </header>
