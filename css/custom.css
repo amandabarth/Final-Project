@@ -5,6 +5,7 @@
     --alt-bg-color:rgba(123, 144, 199, 0.3);
     --alt-txt-color:rgb(0, 0, 0);
     --yellow: rgba(255, 230, 0, 0.765);
+    --solid-yellow: rgb(255,230,0);
 }
 
 *{
@@ -149,6 +150,7 @@ table{
     border: medium solid var(--alt-txt-color);
     border-collapse: collapse;
     margin: auto;
+    padding: 1em;
 
 }
 
@@ -161,11 +163,11 @@ td , th{
     padding: .5em;
 }
 
-tr:nth-child(odd) {
-    background-color: rgb(255, 185, 99);
+td:nth-child(odd) {
+    background-color: var(--solid-yellow);
 }
 
-tr:nth-child(even) {
+td:nth-child(even) {
     background-color:rgb(255, 123, 123);
 }
 
@@ -173,12 +175,12 @@ caption{
     font-variant: small-caps;
     font-weight: bold;
     padding-top: 1em
-
 }
 
 th{
     font-weight:bold;
     font-variant: small-caps;
+    background-color: var(--solid-yellow);
 }
 
 form{
@@ -201,20 +203,31 @@ legend{
     margin-top: 1%;
 }
 
+input{
+    width: 5%;
+}
+
 input[type=submit] {
     background: var(--main-txt-color);
     font-size: large;
+    width: 25%;
 }
 
-input{
-    width: 10%;
+input[type=text]{
+    width: 40%;
 }
-
 #appointTime{
     width: 10em;
 }
 footer{
     background-color:var(--yellow);
     flex: 0 0 100%;
+}
+
+.wrong{
+    color: red;
+    font-weight: bold;
+    background-color: black;
+    padding: 1%;
 }
 
