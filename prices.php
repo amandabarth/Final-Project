@@ -1,32 +1,29 @@
-<?php include 'top.php'; ?>
+<?php 
+    include 'top.php';
+?>
 <main>
             <h1>Prices</h1>
             <section> 
                 <h2>Prices starting at...</h2>
                 <table>
-                        <tr>
-                            <th>Type</th>
-                            <th>Price per Reading</th>
-                            
-                        </tr>
-                        <tr>
-                            <td>Individual</td>
-                            <td>$10</td>
-                            
-                        </tr>
-                        <tr>
-
-                        </tr>
-                        <tr>
-                            <td>Couples</td>
-                            <td>$15</td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Group</td>
-                            <td>$15 + $10 per person </td>
-                            
-                        </tr>
+                    <tr>
+                        <?php 
+                        $sql = 'SELECT fldType, fldAmount FROM tblPrices';
+                        $statement = $pdo->prepare($sql);
+                        $statement->execute();
+                        $records = $statement->fetchAll();
+                        print '<th>Type</th>';
+                        foreach($records as $record){
+                            print'<td>'.$record['fldType'].'</td>';
+                        }
+                    print'</tr>
+                    <tr>';
+                        print'<th>Price per Reading</th>';
+                        foreach($records as $record){
+                            print'<td>'.$record['fldAmount'].'</td>';
+                        }    
+                        ?>
+                    </tr>
                 </table>
                 
             </section>
