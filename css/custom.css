@@ -55,6 +55,14 @@ h1{
     grid-template-columns: 50% 50%;
 }
 
+.prices{
+    padding: 1em;
+}
+
+.options{
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
 
 .sec-1{
     justify-content: space-around;

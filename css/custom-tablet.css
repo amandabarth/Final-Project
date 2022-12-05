@@ -19,3 +19,6 @@ input[type=submit]{
 label{
     font-size: 1em;
 }
+table{
+    width: 100%;
+}
