@@ -4,30 +4,29 @@ include 'top.php';
 <main>
     <p>Create Table SQL</p>
 <pre>
-    CREATE TABLE tblChanges(
-        pmkId INT AUTO_INCREMENT PRIMARY KEY,
-        fldYears VARCHAR(4),
-        fldAveTemp VARCHAR(5),
-        fldSeaLevel VARCHAR(5),
-        fldAveCOO FLOAT
+    CREATE TABLE tblPrices(
+        fldPrimKey INT AUTO_INCREMENT PRIMARY KEY,
+        fldType VARCHAR(20),
+        fldAmount VARCHAR(20)
     )
-    INSERT INTO tblChanges(fldYears, fldAveTemp, fldSeaLevel, fldAveCOO) 
-    VALUES ('2000','+0.4','-0.12','370'),
-    ('2010','+0.7','7','387'),
-    ('2020', '+1.0', '30','412.5')
-    SELECT fldYears, fldAveTemp, fldSeaLevel, fldAveCOO FROM tblChanges
+    INSERT INTO tblPrices(fldType, fldAmount) 
+    VALUES ('Individual','$10'),
+    ('Couples', '$15'),
+    ('Group', '$15 + $10 per person'), 
+    ('Individual (Online)', '$8'),
+    ('Couples (Online)', '$12'),
+    ('Group (Online)', '$10 + $5 per person')
 
-    CREATE TABLE tblQuestions(
-    pmkSubmissionId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    CREATE TABLE tblFinalProjectResponses(
+    fldPrimKey INT AUTO_INCREMENT PRIMARY KEY,
     fldEmail VARCHAR(50) DEFAULT NULL,
-    fldQuestion VARCHAR(150) DEFAULT NULL,
-    fldTermsOfService tinyint(1) DEFAULT 0,
-    fldEmailList tinyint(1) DEFAULT 0,
-    fldPostOnSite tinyint(1) DEFAULT 0,
-    fldKnowledge tinyint(1) DEFAULT 0)
+    fldName VARCHAR(20) DEFAULT NULL,
+    fldAppointTime DATETIME,
+    fldType VARCHAR(10),
+    fldIntentions VARCHAR(150))
 
-    INSERT INTO tblQuestions(fldEmail, fldQuestion, fldTermsOfService, fldEmailList, fldPostOnSite, fldKnowledge)
-    VALUES('acbarth@uvm.edu','How long until the Earth implodes?', 1, 0, 1, 1)
+    INSERT INTO tblFinalProjectResponses(fldEmail, fldName, fldAppointTime, fldType, fldIntentions)
+    VALUES('acbarth@uvm.edu','Amanda Barth', '2022-12-08 10:32:00','Individual', 'I would like to focus this session on being more sure of myself')
 </pre>
 </main>
 <?php include 'footer.php';?>
