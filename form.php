@@ -44,7 +44,6 @@ function sanatize($field){
 
         $intentions = sanatize("txtIntentions");
 
-       // $dataIsGood = false;
 
         if($dataIsGood){
             $sql = 'INSERT INTO tblFinalProjectResponses(fldEmail, fldName, fldAppointTime, fldType, fldIntentions) VALUES(?,?,?,?,?)';
@@ -52,13 +51,13 @@ function sanatize($field){
             $data = array($email, $name, $appointTime, $type, $intentions);
 
             if($statement->execute($data)){
-                $message = '<h2>Thank you</h2>';
-                $message .= '<p>Your reading was sucessfully scheduled!</p>';
+                $message = '<h2>Thank you for Scheduling a Reading!</h2>';
+                print '<p>Your reading was sucessfully scheduled!</p>';
 
                 $to = $email;
                 $from = 'CS 008 Team <rlkoenig@uvm.edu>';
                 $subject = 'You Scheduled a Tarot Reading';
-                $mailMessage = '<p style="font:"Georgia"; color:rbg(67, 42, 255);">Thank you' . $name . 'for scheduling a reading! Your appointment is at '. $appointTime. '</p>';
+                $mailMessage = '<p style="font:Georgia; color:rbg(67, 42, 255);">Thank you, ' . $name . ' for scheduling a reading! Your appointment is at '. $appointTime. '</p>';
                 $mailMessage .= '<p>See you then!</p>';
                 $mailMessage .= '<p>Linsey Reads Tarot</p>';
                 $headers = "MIME_Version: 1.0\r\n";
@@ -76,9 +75,6 @@ function sanatize($field){
                 $message .= '<p>An error occured. Your appointment was not scheduled.</p>';
             }
         }
-        else{
-            print '<p>Error.</p>';
-        } 
 
     }
 ?>
@@ -128,12 +124,11 @@ function sanatize($field){
                 </form>
         </section>
         <section class="flexB">
-            <h2>Thank you for Scheduling a Reading!</h2>
                 <?php
                     print $message;
-                    print '<p>Post Array:</p><pre>';
-                    print_r($_POST);
-                    print '</pre>';
+                    //print '<p>Post Array:</p><pre>';
+                    //print_r($_POST);
+                    //print '</pre>';
                 ?>
             </section>
         </main>
