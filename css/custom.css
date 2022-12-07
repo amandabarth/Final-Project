@@ -1,44 +1,62 @@
 :root{
-    --main-color:rgb(141, 143, 255);
-    --main-color-bg:rgba(126, 143, 255, 0.499);
-    --main-txt-color:rgb(67, 42, 255);
+    --main-color:rgb(228, 235, 255);
+    --main-color-bg:rgba(126, 126, 255, 0.747);
+    --main-txt-color:rgb(131, 99, 198);
     --alt-bg-color:rgba(123, 144, 199, 0.3);
     --alt-txt-color:rgb(0, 0, 0);
-    --yellow: rgba(255, 230, 0, 0.765);
-    --solid-yellow: rgb(255,230,0);
+    --yellow: rgb(0, 43, 55);
 }
 
-*{
-    font-family: Georgia, "Times New Roman", serif;
-}
+
 body{
-    max-width: 90%;
-    margin: 0 auto;
-    background-image: url(../images/bg-image.jpg);
-    color: var(--alt-txt-color);
+    max-width: 100%;
+    margin: 0 0;
+    background-image: url(../images/stars-4.jpg);
+    color: var(--yellow);
     display: flex;
     flex-wrap: wrap;
-    padding: 1%;
+    font-family: Georgia, "Times New Roman", serif;
+    padding:0em;
+    
 }
 main{
     display: flex;
     flex-wrap: wrap;
-    max-width:100%;
+    max-width: 85%;
+    margin: 0 auto;
     background-color: var(--main-color-bg);
 }
 header{
-    background-color: var(--yellow);
-    padding: 1%;
+    background-image: url(../images/purple-banner.jpg);
+    text-shadow: -0.2em 0.05em .1em black;
     flex: 0 1 100%;
+    color: var(--main-color);
+    font-size: 1.8em;
+    font-family:Snell Roundhand, cursive;
+    font-weight: bold;
+    padding-left: 8%;
+    
+    
 }
 main h1{
     flex: 0 1 100%;
     margin: 1% 0 0 0;
     padding: 1%;
+    max-width: 100%;
+    
 }
 
 h1{
     text-transform: uppercase;
+
+}
+
+header h1{
+    text-transform: capitalize;
+}
+
+h2{
+    padding-left: 2%;
 }
 
 .flexA{
@@ -55,14 +73,6 @@ h1{
     grid-template-columns: 50% 50%;
 }
 
-.prices{
-    padding: 1em;
-}
-
-.options{
-    display:grid;
-    grid-template-columns: 33% 33% 33%;
-}
 
 .sec-1{
     justify-content: space-around;
@@ -119,12 +129,13 @@ figcaption{
 
 nav {
     border: thin;
-    background-color:var(--yellow);
+    background-color:black;
     padding: 1em 5em;
     margin: auto;
     text-align: center;
     flex: 0 1 100%;
     justify-content: space-evenly;
+    color: var(--)
 
 }
 nav a{
@@ -135,18 +146,19 @@ nav a:link{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.25em;
     background-color:var(--alt-bg-color);
-    color:var(--alt-txt-color);
+    color:var(--main-color);
     text-decoration:none;
     border-radius: .1em;
     padding: .2em;
 }
 nav a:visited{
-    color: black;
+    color: rgb(85, 218, 255);
 }
 nav a:hover{
     color:var(--main-color);
     text-decoration: underline overline;
 }
+
 .schedule{
     background-color: var(--main-txt-color);
 }
@@ -158,7 +170,7 @@ table{
     border: medium solid var(--alt-txt-color);
     border-collapse: collapse;
     margin: auto;
-    padding: 1em;
+    padding-left: 1em;
 
 }
 
@@ -172,31 +184,34 @@ td , th{
 }
 
 td:nth-child(odd) {
-    background-color: var(--solid-yellow);
+    background-color: silver;
 }
 
 td:nth-child(even) {
-    background-color:rgb(255, 123, 123);
+    background-color:rgb(224, 222, 255);
 }
 
 caption{
     font-variant: small-caps;
     font-weight: bold;
-    padding-top: 1em
+    padding-top: 1em;
+
 }
 
 th{
     font-weight:bold;
     font-variant: small-caps;
-    background-color: var(--solid-yellow);
+    background-color: silver;
 }
 
 form{
-    border: thin solid silver;
+    border: solid silver;
     clear: both;
     max-width: 70em;
     margin:auto;
     padding: 1%;
+    background-color: rgb(35, 2, 53);
+    color: silver;
 }
 
 form p {
@@ -211,31 +226,46 @@ legend{
     margin-top: 1%;
 }
 
-input{
-    width: 5%;
+input[type=submit] {
+    background: var(--main-color-bg);
+    font-size: large;
+    width: 30%;
 }
 
-input[type=submit] {
-    background: var(--main-txt-color);
-    font-size: large;
+.textbox label{
+    display: block;
+}
+
+
+
+
+.textbox input{
     width: 25%;
 }
 
-input[type=text]{
-    width: 40%;
-}
-#appointTime{
-    width: 10em;
-}
+
+
 footer{
-    background-color:var(--yellow);
+    background-color:var(--alt-txt-color);
     flex: 0 0 100%;
 }
 
-.wrong{
-    color: red;
-    font-weight: bold;
-    background-color: black;
-    padding: 1%;
+p{
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
+
+
+.options{
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+h3{
+    padding: 1em;
+}
+
+.left-padding{
+    padding-left: 1em;
+}
