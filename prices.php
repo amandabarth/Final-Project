@@ -1,9 +1,10 @@
 <?php 
     include 'top.php';
 ?>
-<main class="prices">
+<main>
+    
             <h1>Prices</h1>
-            <section> 
+            <section class="left-padding"> 
                 <h2>Prices starting at...</h2>
                 <table>
                     <tr>
