@@ -109,7 +109,6 @@ p{
     text-indent: 3.5%;
     margin: 2%;
     font-family: Georgia, 'Times New Roman', serif;
-    
 }
 
 cite{
@@ -237,14 +236,9 @@ input[type=submit] {
     display: block;
 }
 
-
-
-
 .textbox input{
     width: 25%;
 }
-
-
 
 footer{
     background-color:var(--alt-txt-color);
@@ -262,7 +256,9 @@ p{
     display:grid;
     grid-template-columns: 33% 33% 33%;
 }
-
+.options h2{
+    grid-column: 1/4;
+}
 h3{
     padding: 1em;
 }
