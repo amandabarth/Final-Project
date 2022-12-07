@@ -1,8 +1,8 @@
-.flexA, .flexB, .flexC {
-    flex: 0 1 100%;
+.grid-layout{
+    display:block;
 }
-.flexA {
-    width: 90%;
+.options{
+    display: block;
 }
 nav a {
     display: block;

@@ -10,40 +10,33 @@
 
 body{
     max-width: 100%;
-    margin: 0 0;
+    margin: 0;
     background-image: url(../images/stars-4.jpg);
     color: rgb(222, 222, 222);
-    display: flex;
-    flex-wrap: wrap;
     font-family: Georgia, "Times New Roman", serif;
-    padding:0em;
+    padding: 0em;
     
 }
 main{
-    display: flex;
-    flex-wrap: wrap;
     max-width: 85%;
-    margin: 0 auto;
+    margin: auto;
     background-color: var(--main-color-bg);
+    padding-bottom: 2%;
 }
 header{
     background-image: url(../images/purple-banner.jpg);
     text-shadow: -0.2em 0.05em .1em black;
-    flex: 0 1 100%;
     color: var(--main-color);
     font-size: 1.8em;
-    font-family:Snell Roundhand, cursive;
+    font-family:'Snell Roundhand', cursive;
     font-weight: bold;
-    padding-left: 8%;
-    
+    padding: .2% 2% .2% 8%;
     
 }
 main h1{
-    flex: 0 1 100%;
-    margin: 1% 0 0 0;
+    margin: 0;
     padding: 1%;
     max-width: 100%;
-    
 }
 
 h1{
@@ -59,20 +52,10 @@ h2{
     padding-left: 2%;
 }
 
-.flexA{
-    flex: 1 0 80%;
-    padding: 1%;
-}
-.flexB, .flexC {
-    flex: 1 0 40%;
-    padding: 1%;
-}
-
 .grid-layout{
     display:grid;
     grid-template-columns: 50% 50%;
 }
-
 
 .sec-1{
     justify-content: space-around;
@@ -171,7 +154,6 @@ table{
     margin: auto;
     padding-left: 1em;
     color: var(--yellow)
-
 }
 
 table+p {
@@ -207,7 +189,7 @@ th{
 form{
     border: solid silver;
     clear: both;
-    max-width: 70em;
+    max-width: 100em;
     margin:auto;
     padding: 1%;
     background-color: rgb(35, 2, 53);
@@ -242,15 +224,14 @@ input[type=submit] {
 
 footer{
     background-color:var(--alt-txt-color);
-    flex: 0 0 100%;
+    margin: 0;
+    padding: .5em;
 }
 
 p{
     padding-left: 1em;
     padding-right: 1em;
 }
-
-
 
 .options{
     display:grid;
