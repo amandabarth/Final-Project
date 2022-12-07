@@ -227,7 +227,7 @@ legend{
 }
 
 input[type=submit] {
-    background: var(--main-color-bg);
+    background: var(--main-txt-color);
     font-size: large;
     width: 30%;
 }
