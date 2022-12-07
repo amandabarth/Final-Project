@@ -2,9 +2,8 @@
     include 'top.php';
 ?>
 <main>
-    
             <h1>Prices</h1>
-            <section class="left-padding"> 
+            <section> 
                 <h2>Prices starting at...</h2>
                 <table>
                     <tr>
@@ -26,9 +25,9 @@
                         ?>
                     </tr>
                 </table>
-                <h2>About Each</h2>
             </section>
-            <section class="options"> 
+            <section class="options">
+            <h2>About Each</h2>
                 <section class="sec-1">
                     <h3>Individual</h3>
                     <p>Are you wondering what your future holds? Or perhaps you are looking for insight into your inner psyche... Either way, an individual reading will give you the answers and insight you need to guide you on your journey. Come to the reading with intentions and know what you hope to get out of it. This is your session so take the time to look deep within yourself to get the most out of it.</p>
@@ -50,4 +49,3 @@
         <?php
         include 'footer.php';
         ?>
-    </body>
