@@ -255,3 +255,7 @@ footer a:link{
 footer a:visited{
     color: silver;
 }
+.wrong{
+    color: red;
+    text-decoration: underline;
+}
