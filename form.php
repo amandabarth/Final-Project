@@ -22,7 +22,7 @@ function sanatize($field){
 ?>
         <main>
             <h1>Schedule a Reading</h1>
-            <section class="flexA">
+            <section>
                 <h2>To schedule a reading, submit this form!</h2>
 <?php
     if($_SERVER["REQUEST_METHOD"] == 'POST'){
@@ -33,8 +33,16 @@ function sanatize($field){
         }
 
         $name = sanatize("txtName");
+        if($name == ''){
+            print'<p class="wrong">Please enter your name.</p>';
+            $dataIsGood = false;
+        }
 
         $appointTime = sanatize("appointTime");
+        if($appointTime == ''){
+            print '<p class="wrong">Please choose an appointment time.</p>';
+            $dataIsGood = false;
+        }
 
         $type = sanatize("radType");
         if($type != "Individual" AND $type != "Couple" AND $type != "Group"){
@@ -51,7 +59,7 @@ function sanatize($field){
             $data = array($email, $name, $appointTime, $type, $intentions);
 
             if($statement->execute($data)){
-                $message = '<h2>Thank you for Scheduling a Reading!</h2>';
+                $message = '<h2>You Scheduled a Reading!</h2>';
                 print '<p>Your reading was sucessfully scheduled!</p>';
 
                 $to = $email;
@@ -123,7 +131,8 @@ function sanatize($field){
                     </fieldset>
                 </form>
         </section>
-        <section class="flexB">
+        <section>
+            <h2>Thank You!</h2>
                 <?php
                     print $message;
                     //print '<p>Post Array:</p><pre>';
